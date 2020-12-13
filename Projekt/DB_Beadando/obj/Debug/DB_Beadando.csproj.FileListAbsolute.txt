@@ -1,0 +1,12 @@
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\bin\Debug\DB_Beadando.exe.config
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\bin\Debug\DB_Beadando.exe
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\bin\Debug\DB_Beadando.pdb
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\obj\Debug\DB_Beadando.csprojAssemblyReference.cache
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\obj\Debug\DB_Beadando.Form1.resources
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\obj\Debug\DB_Beadando.Properties.Resources.resources
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\obj\Debug\DB_Beadando.csproj.GenerateResource.cache
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\obj\Debug\DB_Beadando.csproj.CoreCompileInputs.cache
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\obj\Debug\DB_Beadando.csproj.CopyComplete
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\obj\Debug\DB_Beadando.exe
+C:\Users\Krisz\source\repos\DB_Beadando\DB_Beadando\obj\Debug\DB_Beadando.pdb

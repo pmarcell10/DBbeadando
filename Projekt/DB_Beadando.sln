@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_Beadando", "DB_Beadando\DB_Beadando.csproj", "{DC65045E-73CA-4FF1-BD5F-A0CC5B939858}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC65045E-73CA-4FF1-BD5F-A0CC5B939858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC65045E-73CA-4FF1-BD5F-A0CC5B939858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC65045E-73CA-4FF1-BD5F-A0CC5B939858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC65045E-73CA-4FF1-BD5F-A0CC5B939858}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5297B9E-016C-4ECD-9DFE-E08B0DF7F631}
+	EndGlobalSection
+EndGlobal
