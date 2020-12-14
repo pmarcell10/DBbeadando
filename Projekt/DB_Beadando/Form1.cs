@@ -42,7 +42,7 @@ namespace DB_Beadando
 
         private void btn_Buy_Click(object sender, EventArgs e)
         {
-            if(listbox_availableItems.SelectedItem == null)
+            if(listbox_availableItems.SelectedItem == null) // Ha nincs termék kiválasztva
             {
                 MessageBox.Show("Válassz terméket");
                 return;
@@ -50,6 +50,11 @@ namespace DB_Beadando
 
             Item selectedItem = (Item)listbox_availableItems.SelectedItem;
             int selectedQuantity = (int)itemQuantitySelector.Value;
+            if(selectedQuantity == 0) // Ha nincs mennyiség kiválasztva
+            {
+                MessageBox.Show("Válassz mennyiséget!");
+                return;
+            }
             try
             {
                 if (itemHandler.Buy(selectedItem, selectedQuantity) != 0)
