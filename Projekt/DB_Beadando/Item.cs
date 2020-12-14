@@ -59,5 +59,13 @@ namespace DB_Beadando
                 else quantity = value;
             }
         }
+
+        public string BoxDisplay
+        {
+            get
+            {
+                return name + " (" + quantity + ")";
+            }
+        }
     }
 }

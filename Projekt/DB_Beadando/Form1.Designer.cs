@@ -33,9 +33,9 @@
             this.lb_availableItems = new System.Windows.Forms.Label();
             this.btn_Admin = new System.Windows.Forms.Button();
             this.btn_Buy = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.itemQuantitySelector = new System.Windows.Forms.NumericUpDown();
             this.lb_db = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemQuantitySelector)).BeginInit();
             this.SuspendLayout();
             // 
             // topLabel
@@ -83,13 +83,14 @@
             this.btn_Buy.TabIndex = 4;
             this.btn_Buy.Text = "Vásárlás";
             this.btn_Buy.UseVisualStyleBackColor = true;
+            this.btn_Buy.Click += new System.EventHandler(this.btn_Buy_Click);
             // 
-            // numericUpDown1
+            // itemQuantitySelector
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(318, 152);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(71, 22);
-            this.numericUpDown1.TabIndex = 5;
+            this.itemQuantitySelector.Location = new System.Drawing.Point(318, 152);
+            this.itemQuantitySelector.Name = "itemQuantitySelector";
+            this.itemQuantitySelector.Size = new System.Drawing.Size(71, 22);
+            this.itemQuantitySelector.TabIndex = 5;
             // 
             // lb_db
             // 
@@ -106,7 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lb_db);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.itemQuantitySelector);
             this.Controls.Add(this.btn_Buy);
             this.Controls.Add(this.btn_Admin);
             this.Controls.Add(this.lb_availableItems);
@@ -114,7 +115,7 @@
             this.Controls.Add(this.topLabel);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemQuantitySelector)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +128,7 @@
         private System.Windows.Forms.Label lb_availableItems;
         private System.Windows.Forms.Button btn_Admin;
         private System.Windows.Forms.Button btn_Buy;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown itemQuantitySelector;
         private System.Windows.Forms.Label lb_db;
     }
 }
