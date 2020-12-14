@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 
@@ -60,11 +61,25 @@ namespace DB_Beadando
             }
         }
 
+        private string uqid;
+
+        public string Uqid // A képzeletbeli bolt termékének egyedi azonosítója, 4 betűből és 4 számból áll
+        {
+            get
+            {
+                return uqid;
+            }
+            set
+            {        
+                    uqid = value;
+            }
+        }
+
         public string BoxDisplay
         {
             get
             {
-                return name + " (" + quantity + ")";
+                return name + " (" + quantity + "db)";
             }
         }
     }

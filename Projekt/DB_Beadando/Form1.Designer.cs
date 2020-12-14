@@ -44,6 +44,7 @@
             this.lb_addItem = new System.Windows.Forms.Label();
             this.textBox_itemName = new System.Windows.Forms.TextBox();
             this.btn_addItem = new System.Windows.Forms.Button();
+            this.textBox_uqid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.itemQuantitySelector)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +88,7 @@
             // 
             // btn_Buy
             // 
-            this.btn_Buy.Location = new System.Drawing.Point(434, 149);
+            this.btn_Buy.Location = new System.Drawing.Point(32, 381);
             this.btn_Buy.Name = "btn_Buy";
             this.btn_Buy.Size = new System.Drawing.Size(75, 23);
             this.btn_Buy.TabIndex = 4;
@@ -97,7 +98,7 @@
             // 
             // itemQuantitySelector
             // 
-            this.itemQuantitySelector.Location = new System.Drawing.Point(318, 152);
+            this.itemQuantitySelector.Location = new System.Drawing.Point(351, 149);
             this.itemQuantitySelector.Name = "itemQuantitySelector";
             this.itemQuantitySelector.Size = new System.Drawing.Size(71, 22);
             this.itemQuantitySelector.TabIndex = 5;
@@ -105,7 +106,7 @@
             // lb_db
             // 
             this.lb_db.AutoSize = true;
-            this.lb_db.Location = new System.Drawing.Point(395, 152);
+            this.lb_db.Location = new System.Drawing.Point(427, 154);
             this.lb_db.Name = "lb_db";
             this.lb_db.Size = new System.Drawing.Size(24, 17);
             this.lb_db.TabIndex = 6;
@@ -173,7 +174,7 @@
             // lb_addItem
             // 
             this.lb_addItem.AutoSize = true;
-            this.lb_addItem.Location = new System.Drawing.Point(315, 75);
+            this.lb_addItem.Location = new System.Drawing.Point(348, 79);
             this.lb_addItem.Name = "lb_addItem";
             this.lb_addItem.Size = new System.Drawing.Size(137, 17);
             this.lb_addItem.TabIndex = 13;
@@ -182,15 +183,16 @@
             // 
             // textBox_itemName
             // 
-            this.textBox_itemName.Location = new System.Drawing.Point(318, 110);
+            this.textBox_itemName.Location = new System.Drawing.Point(351, 111);
             this.textBox_itemName.Name = "textBox_itemName";
             this.textBox_itemName.Size = new System.Drawing.Size(100, 22);
             this.textBox_itemName.TabIndex = 14;
+            this.textBox_itemName.Text = "Név";
             this.textBox_itemName.Visible = false;
             // 
             // btn_addItem
             // 
-            this.btn_addItem.Location = new System.Drawing.Point(318, 197);
+            this.btn_addItem.Location = new System.Drawing.Point(350, 229);
             this.btn_addItem.Name = "btn_addItem";
             this.btn_addItem.Size = new System.Drawing.Size(101, 23);
             this.btn_addItem.TabIndex = 15;
@@ -199,11 +201,21 @@
             this.btn_addItem.Visible = false;
             this.btn_addItem.Click += new System.EventHandler(this.btn_addItem_Click);
             // 
+            // textBox_uqid
+            // 
+            this.textBox_uqid.Location = new System.Drawing.Point(351, 186);
+            this.textBox_uqid.Name = "textBox_uqid";
+            this.textBox_uqid.Size = new System.Drawing.Size(100, 22);
+            this.textBox_uqid.TabIndex = 16;
+            this.textBox_uqid.Text = "Unique ID";
+            this.textBox_uqid.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox_uqid);
             this.Controls.Add(this.btn_addItem);
             this.Controls.Add(this.textBox_itemName);
             this.Controls.Add(this.lb_addItem);
@@ -246,6 +258,7 @@
         private System.Windows.Forms.Label lb_addItem;
         private System.Windows.Forms.TextBox textBox_itemName;
         private System.Windows.Forms.Button btn_addItem;
+        private System.Windows.Forms.TextBox textBox_uqid;
     }
 }
 

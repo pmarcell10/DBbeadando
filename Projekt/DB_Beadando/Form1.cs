@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,7 +31,7 @@ namespace DB_Beadando
 
         public void loadItems()
         {
-            items = itemHandler.ListItems();
+            items = itemHandler.loadItems();
             listbox_availableItems.DisplayMember = "BoxDisplay";
             foreach (Item i in items)
             {
@@ -59,6 +60,7 @@ namespace DB_Beadando
             lb_addItem.Visible = true;
             textBox_itemName.Visible = true;
             btn_addItem.Visible = true;
+            textBox_uqid.Visible = true;
 
         }
 
@@ -124,9 +126,10 @@ namespace DB_Beadando
         {
             string name = textBox_itemName.Text;
             int quantity = (int)itemQuantitySelector.Value;
+            string uqid = textBox_uqid.Text;
             try
             {
-                itemHandler.Add(name, quantity);
+                itemHandler.Add(name, quantity, uqid);
             }
             catch (Exception ex)
             {

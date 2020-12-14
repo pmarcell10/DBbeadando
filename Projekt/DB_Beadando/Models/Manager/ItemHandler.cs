@@ -5,13 +5,14 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DB_Beadando
 {
     class ItemHandler : DBManager
     {
-        public List<Item> ListItems()
+        public List<Item> loadItems()
         {
             //Termékek kilistázása
             List<Item> items = new List<Item>();
@@ -21,7 +22,7 @@ namespace DB_Beadando
 
             cmd.CommandType = System.Data.CommandType.Text;
 
-            cmd.CommandText = @"SELECT id, name, quantity FROM items";
+            cmd.CommandText = @"SELECT id, name, quantity, uqid FROM items";
 
             OracleDataReader reader = cmd.ExecuteReader();
 
@@ -33,6 +34,7 @@ namespace DB_Beadando
                 item.Id = int.Parse(reader["id"].ToString());
                 item.Name = (string)reader["name"];
                 item.Quantity = int.Parse(reader["quantity"].ToString());
+                item.Uqid = (string)reader["uqid"];
 
                 items.Add(item);
             }
@@ -113,12 +115,12 @@ namespace DB_Beadando
 
         }
 
-        public int Add(string name, int quantity)
+        public int Add(string name, int quantity, string uqid)
         {
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = openConn();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO items (id, name, quantity) VALUES (seq_item.nextval, :name, :quantity)";
+            cmd.CommandText = "INSERT INTO items (id, name, quantity, uqid) VALUES (seq_item.nextval, :name, :quantity, :uqid)";
 
             OracleParameter pName = new OracleParameter();
             pName.ParameterName = ":name";
@@ -130,8 +132,21 @@ namespace DB_Beadando
             pQuantity.OracleDbType = OracleDbType.Int32;
             pQuantity.Value = quantity;
 
+            Regex r = new Regex(@"^\w{4}\d{4}$");
+            if (r.Match(uqid).Success == false)
+            {
+                throw new Exception("Nem megfelelő UQID formátum!");
+            }
+
+            OracleParameter pUqid = new OracleParameter();
+            pUqid.ParameterName = ":uqid";
+            pUqid.OracleDbType = OracleDbType.Varchar2;
+            pUqid.Value = uqid;
+
+
             cmd.Parameters.Add(pName);
             cmd.Parameters.Add(pQuantity);
+            cmd.Parameters.Add(pUqid);
 
             return cmd.ExecuteNonQuery();
         }
