@@ -192,11 +192,12 @@
             // 
             this.btn_addItem.Location = new System.Drawing.Point(318, 197);
             this.btn_addItem.Name = "btn_addItem";
-            this.btn_addItem.Size = new System.Drawing.Size(75, 23);
+            this.btn_addItem.Size = new System.Drawing.Size(101, 23);
             this.btn_addItem.TabIndex = 15;
             this.btn_addItem.Text = "Hozzáadás";
             this.btn_addItem.UseVisualStyleBackColor = true;
             this.btn_addItem.Visible = false;
+            this.btn_addItem.Click += new System.EventHandler(this.btn_addItem_Click);
             // 
             // Form1
             // 

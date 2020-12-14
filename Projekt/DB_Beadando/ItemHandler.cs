@@ -112,5 +112,28 @@ namespace DB_Beadando
             else throw new Exception("Nincs ekkora mennyiség készleten!"); //Egyébként hiba, vásárlásnál elkapjuk
 
         }
+
+        public int Add(string name, int quantity)
+        {
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = openConn();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "INSERT INTO items (id, name, quantity) VALUES (seq_item.nextval, :name, :quantity)";
+
+            OracleParameter pName = new OracleParameter();
+            pName.ParameterName = ":name";
+            pName.OracleDbType = OracleDbType.Varchar2;
+            pName.Value = name;
+
+            OracleParameter pQuantity = new OracleParameter();
+            pQuantity.ParameterName = ":quantity";
+            pQuantity.OracleDbType = OracleDbType.Int32;
+            pQuantity.Value = quantity;
+
+            cmd.Parameters.Add(pName);
+            cmd.Parameters.Add(pQuantity);
+
+            return cmd.ExecuteNonQuery();
+        }
     }
 }

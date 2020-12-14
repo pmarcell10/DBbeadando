@@ -47,6 +47,13 @@ namespace DB_Beadando
 
         public void showAdminMenu()
         {
+            lbl_Admin.Visible = false;
+            lbl_Username.Visible = false;
+            lbl_Password.Visible = false;
+            textBox_username.Visible = false;
+            textBox_password.Visible = false;
+            btn_Login.Visible = false;
+
             btn_Buy.Visible = false;
             topLabel.Text = "Admin menü";
             lb_addItem.Visible = true;
@@ -111,6 +118,23 @@ namespace DB_Beadando
 
             }
             MessageBox.Show("Sikertelen felhasználónév, vagy jelszó!");
+        }
+
+        private void btn_addItem_Click(object sender, EventArgs e)
+        {
+            string name = textBox_itemName.Text;
+            int quantity = (int)itemQuantitySelector.Value;
+            try
+            {
+                itemHandler.Add(name, quantity);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            MessageBox.Show("Sikeres hozzáadás");
+            refreshItems();
         }
     }
 }
