@@ -15,11 +15,16 @@ namespace DB_Beadando
         private ItemHandler itemHandler;
         private List<Item> items;
 
+        private AdminHandler adminHandler;
+        private List<Admin> admins;
+
         public Form1()
         {
             InitializeComponent();
             itemHandler = new ItemHandler();
             loadItems();
+            adminHandler = new AdminHandler();
+            admins = adminHandler.loadAdmins();
 
         }
 
@@ -38,6 +43,16 @@ namespace DB_Beadando
         {
             listbox_availableItems.Items.Clear();
             loadItems();
+        }
+
+        public void showAdminMenu()
+        {
+            btn_Buy.Visible = false;
+            topLabel.Text = "Admin menü";
+            lb_addItem.Visible = true;
+            textBox_itemName.Visible = true;
+            btn_addItem.Visible = true;
+
         }
 
         private void btn_Buy_Click(object sender, EventArgs e)
@@ -61,6 +76,8 @@ namespace DB_Beadando
                     {
                         MessageBox.Show("Sikeresen megvásárolva: "+selectedQuantity+" db "+selectedItem.Name);
                         refreshItems();
+
+
                     }
             }
             catch (Exception ex)
@@ -70,5 +87,30 @@ namespace DB_Beadando
 
         }
 
+        private void btn_Admin_Click(object sender, EventArgs e)
+        {
+            lbl_Admin.Visible = true;
+            lbl_Username.Visible = true;
+            lbl_Password.Visible = true;
+            textBox_username.Visible = true;
+            textBox_password.Visible = true;
+            btn_Login.Visible = true;
+
+        }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            foreach (Admin admin in admins)
+            {
+                if (admin.Username == textBox_username.Text && admin.Password == textBox_password.Text)
+                {
+                    MessageBox.Show("Sikeres bejelentkezés!");
+                    showAdminMenu();
+                    return;
+                }
+
+            }
+            MessageBox.Show("Sikertelen felhasználónév, vagy jelszó!");
+        }
     }
 }
